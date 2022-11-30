@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+:root
+{
+	--default-padding: 5px;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	font-family: 'Ubuntu', sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	text-align: center;
+}
+
+header
+{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.menu > ul
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.menu > ul > a
+{
+	width: 25%;
+	border: 2px solid black;
+	text-decoration: none;
+	margin: 0;
+	color: black;
+}
+
+.menu > ul > a:visited
+{
+	color: black;
+}
+
+.menu > ul >  a > li  
+{
+	list-style-type: none;
+	padding: var(--default-padding);
+	transition: 500ms;
+	font-weight: bold;
+}
+
+/*.menu > ul >  a > li:nth-child(odd)
+{
+	border-left: none;
+}*/
+
+.menu > ul > a > li:hover
+{
+	background: gray;
+	color: white;
+	cursor: pointer;
+}
+
+#logo
+{
+	width: 45%;
+	height: auto;
+}
+
+#tagline
+{
+	position: relative;
+	top: -25px;
+}
+
+
+#content > #carousel > .image
+{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 1s;
+}
+
+.fade
+{
+	animation-name: fade;
+	animation-duration: 1s;
+}
+
+@keyframes fade
+{
+	0%
+	{
+		opacity: .4;
+	}
+	100%
+	{
+		opacity: 1;
+	}
+}
+
+.active
+{
+	background: gray;
+	color: white !important;
+}
+
+#body
+{
+	margin: 10px;
+}
+
+#employee-tree
+{
+	padding-bottom: 15px;
+	width: 100%;
+	flex-shrink: 1;
+}
+
+#employee-tree > #employee > img
+{
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;
+}
+
+#government > #before-ml > .position > img, #government > #after-ml > .position > img, #government > #before-ml > .position > .senator > img 
+{
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;	
+}
+
+.lower-downs
+{
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-shrink: 1;
+	flex-wrap: wrap;
+}
+
+.lower-downs > #employee > p:nth-child(2)
+{
+	font-weight: bold;
+}
+
+.lower-downs > #employee > img
+{
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;
+	margin: 25px;
+	flex-shrink: 2;
+}
+
+.caption
+{
+	padding: 5px;
+}
+
+#content
+{
+	text-align: left;
+	width: 100%;
+	position: absolute;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+#content > #carousel
+{
+	float: left;
+	position: relative;
+	background: gray;
+	height: 400px;
+	width: 50%;
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+#content > #text
+{
+	text-indent: 25px;
+	line-height: 1.5;
+}
+
+#content > #text > h2
+{
+	text-align: center;
+}
+
+#content > #carousel > .caption
+{
+	text-align: left;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: white;
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+}
+
+#content > #carousel > .caption > #caption-desc
+{
+	font-size: 15px;
+	transition: 1s;
+}
+
+#svg
+{
+	display: none;
+}
+
+#content > #carousel > .caption > #caption-title
+{
+	font-size: 30px;
+	transition: 1s;
+}
+
+#preamble > p
+{
+	text-align: justify;
+}
+
+.position
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 5px;
+}
+
+.position.senators
+{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+	flex-direction: row;
+	justify-content: center;
+	width: fit-content;
+	border-top: 3px dotted gray;
+}
+
+.position.senators:nth-child(1)
+{
+	color: red;
+}
+
+.senator:nth-child(1)
+{
+	position: relative;
+	transform: translate(-50%);
+}
+
+.senator:nth-child(2)
+{
+	position: relative;
+	transform: translate(-28%);
+}
+.senator:nth-child(3)
+{
+	position: relative;
+	transform: translate(50%);
+}
+
+#pointer
+{
+	position: relative;
+	height: 60px;
+	border-left: 3px dotted gray;
+}
+
+.senator > #pointer
+{
+	position: relative;
+	left: 50%;
+}
+
+.mobile-menu
+{
+	display: none;
+}
+
+.mobile-menu > ul, .mobile-menu > ul > a
+{
+	color: white;
+	font-weight: bold;
+	list-style-type: none;
+	text-decoration: none;
+	line-height: 2.0;
+	font-size: 1.2em;
+}
+
+@media screen and (max-width: 800px)
+{
+	#content
+	{
+		width: 90%;
+	}
+
+	#content > #carousel
+	{
+		float: none;
+		width: 100%;
+	}	
+
+	#government
+	{
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%);
+		width: 50%;
+	}
+
+	#government > #before-ml > .position > img, #government > #after-ml > .position > img, #government > #before-ml > .position > .senator > img 
+	{
+		width: 100px;
+		height: 100px;
+		border-radius: 100%;	
+	}
+
+	.senators
+	{
+		justify-content: space-around;
+	}
+
+	.senator:nth-child(2)
+	{
+		position: relative;
+		transform: translateY(-15%);
+	}
+
+	.senator:nth-child(3)
+	{
+		position: relative;
+		top: -15px;
+	}	
+}
+
+@media screen and (max-width: 750px)
+{
+	html, .wrapper
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		overflow-x: hidden !important;
+	}
+	#content
+	{
+		width: 90%;
+	}
+
+	#content > #carousel
+	{
+		float: none;
+		width: 100%;
+		margin-left: 0;
+	}
+	#logo
+	{
+		width: 55%;
+	}
+
+	#content
+	{
+		margin: 10px;
+	}
+
+	.menu
+	{
+		display: none;
+	}
+	
+	#svg
+	{
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: inline-block;
+		width: 15%;
+		height: auto;
+		padding: 10px;
+	}
+
+	.mobile-menu
+	{
+		position: absolute;
+		top: 0;
+		right: -50%;
+		display: block;
+		width: 50%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+		transition: 500ms;
+	}
+
+	.mobile-menu.navigate
+	{	
+		right: 0;
+	}
+
+	#tagline
+	{
+		top: -15px;
+		font-size: 13px;
+	}
+
+	#government > #before-ml > .position > img, #government > #after-ml > .position > img, #government > #before-ml > .position > .senator > img 
+	{
+		width: 75px;
+		height: 75px;
+		border-radius: 100%;	
+	}
+}
