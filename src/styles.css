@@ -191,12 +191,12 @@ header
 	margin-right: 10px;
 }
 
-#content > #carousel::before
+#content #left-arrow
 {
 	position: absolute;
 	background: rgba(0, 0, 0, 0.5);
+	border: none;
 	color: white;
-	content: '<';
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -207,13 +207,13 @@ header
 	z-index: 1;
 }
 
-#content > #carousel::after
+#content #right-arrow
 {
 	right: 0;
 	position: absolute;
 	background: rgba(0, 0, 0, 0.5);
+	border: none;
 	color: white;
-	content: '>';
 	display: flex;
 	justify-content: center;
 	align-items: center;

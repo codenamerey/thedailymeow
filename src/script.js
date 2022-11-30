@@ -1,7 +1,13 @@
 const image = document.querySelector('.image');
 const cap_title = document.querySelector('#caption-title');
 const cap_desc = document.querySelector('#caption-desc');
+const buttons = document.querySelectorAll('.button');
 var slideIndex = 0;
+let changeImage;
+
+buttons.forEach((button) => {
+    button.addEventListener('click', nextSlideOnClick)
+});
 
 function run()
 {
@@ -14,7 +20,8 @@ function run()
     {
         slideIndex = 0;
     }
-    setTimeout(run, 5000);
+    console.log(slideIndex);
+    changeImage = setTimeout(run, 5000);
 }
 
 function readJSON()
@@ -50,6 +57,41 @@ function changeImageAndTitle(img, title, desc)
     cap_desc.innerText = desc;
     image.offsetWidth;
     image.classList.add("fade");
+}
+
+function nextSlideOnClick(e) 
+{
+    if(e.target.id == 'left-arrow') 
+    {
+        if(slideIndex <= 0) 
+        {
+            slideIndex = 2;
+            clearTimeout(changeImage);
+        }
+
+        else
+        {
+            slideIndex -= 1;
+            clearTimeout(changeImage);
+        }
+        changeImageAndTitle(data[slideIndex].image, data[slideIndex].title, data[slideIndex].desc);
+    }
+
+    else
+    {
+        if(slideIndex >= 2) 
+        {
+            slideIndex = 0;
+            clearTimeout(changeImage);
+        }
+        else {
+            slideIndex += 1;
+            clearTimeout(changeImage);
+        }
+        console.log(slideIndex);
+        changeImageAndTitle(data[slideIndex].image, data[slideIndex].title, data[slideIndex].desc);
+    }
+
 }
 
 document.onready = run();
